@@ -10,22 +10,23 @@ function Home(){
             <FontAwesomeIcon icon={faBars} />
           </span>
         <span className="nav-center">
-          TIME-CAPSULE-2.0</span>
-          <span className="nav-right">
-            <p className="home-Text">HOME</p>
-            <p className="capsules-Text">CAPSULES</p>
-            <p className="about-Text">ABOUT</p>
-          </span>
+          TIME CAPSULE 2.0
+        </span>
+        <span className="nav-right">
+          <p className="home-Text">HOME</p>
+          <p className="capsules-Text">CAPSULES</p>
+          <p className="about-Text">ABOUT</p>
+        </span>
       </nav>
       <nav className="login-nav">
         <label className="email-label" for="email">
           EMAIL:
         </label>
-        <input className="email-input" name="email" id="email" type="email" placeholder="enter your email..." />
+        <input className="email-input" name="email" id="email" type="email" placeholder="someone@example.com" />
         <label className="password-label" for="password">
           PASSWORD:
         </label>
-        <input className="password-input" name="password" id="password" type="password" placeholder="enter your password.." />
+        <input className="password-input" name="password" id="password" type="password" placeholder="Password" />
         <button className="signIn-btn">SIGN IN</button>
       </nav>
     </>

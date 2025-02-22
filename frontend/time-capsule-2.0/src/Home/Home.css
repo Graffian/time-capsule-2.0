@@ -1,16 +1,38 @@
+@font-face {
+  font-family: Poppins;
+  src: url(Fonts\Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(Fonts\Montserrat-Medium.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Poppins, Montserrat;
+}
 .nav-bar{
   color:white;
   display: flex;
-  justify-content: center;
+  font-weight: 500;
+  line-height: 3em;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   gap:80px;
-  background-color: #1a27ea;
+  background-image: linear-gradient(to right, #072431, #00B2FF);
   height:100px;
   width:100%;
 }
+.nav-center{
+  font-size: 2em;
+  font-weight: 600;
+  font-family: Montserrat;
+}
 .nav-right{
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,50 +95,76 @@
 }
 .login-nav{
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 10px;
+  padding-inline: 50px;
   box-shadow: 5px 5px 10px #232323;
-  background-color: #1a27ea;
+  background-image: linear-gradient(to bottom right,#072431, #00B2FF );
   height:400px;
   width:700px;
-  margin:auto;
-  gap:10px
+  margin-top: 15vh;
+  margin-inline:auto;
+  gap:20px
+}
+.email-label{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  font-size: 1.5em;
+  color:white;
+}
+.password-label{
+  font-size: 1.5em;
+  color:white;
 }
 .email-input{
   border-radius:10px;
   padding: 10px;
   outline: none;
+  min-width: 250px;
   border:none;
   background-color: white;
   color:black;
+  font: inherit;
+  font-size: 0.75em;
   box-shadow: 5px 5px 10px #232323;
 }
 .email-input:hover{
   border:2px solid red;
+  padding: 8px;
 }
 .password-input{
-  border-radius: 10px;
+  border-radius:10px;
   padding: 10px;
+  min-width: 250px;
   outline: none;
   border:none;
   background-color: white;
   color:black;
+  font: inherit;
+  font-size: 0.75em;
   box-shadow: 5px 5px 10px #232323;
 }
 .password-input:hover{
   border:2px solid red;
+  padding: 8px;
 }
-.email-label{
-  color:white;
-}
-.password-label{
-  color:white;
-}
+
 .signIn-btn{
-  padding: 10px;
-  border-radius: 10px;
+  margin-top: 40px;
+  font: inherit;
+  padding-block: 10px;
+  padding-inline: 20px;
+  border-radius: 5px;
   color:white;
-  background-color: #1a27ea;
-  box-shadow: 5px 5px 10px #232323;
+  border: 0;
+  background-color: #023047;
+  /* box-shadow: 5px 5px 10px #232323; */
+}
+.signIn-btn:hover{
+  background-color: hsl(180, 95%, 14%);
 }
