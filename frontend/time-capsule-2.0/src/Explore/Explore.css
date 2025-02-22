@@ -1,0 +1,67 @@
+.create-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:20px;
+}
+.input-div-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:10px;
+  border:2px solid #1a27ea;
+  background-color: black;
+  box-shadow: 5px 5px 10px #232323;
+  height:450px;
+  width:500px;
+}
+.input-div-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border:2px solid #1a27ea;
+  background-color: black;
+  box-shadow: 5px 5px 10px #232323;
+  height:450px;
+  width:450px;
+  gap:20px;
+}
+.add-img-tab{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: row;
+  color:white;
+  font-size: 1.3em;
+  gap:20px;
+}
+.capsule-type-input{
+  padding:10px;
+  outline: none;
+  background-color: white;
+  color:black;
+}
+.capsule-desc-input{
+  padding:10px;
+  outline: none;
+  background-color: white;
+  color:black;
+}
+.capsule-name-input{
+  padding:10px;
+  outline: none;
+  background-color: white;
+  color:black;
+}
+label{
+  color:white;
+}
+.addBtn{
+  background-color: #32ea1a;
+  color:black;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #232323;
+}

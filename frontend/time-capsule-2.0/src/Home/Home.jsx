@@ -1,23 +1,15 @@
 import "./Home.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import {useNavigate} from "react-router-dom"
 function Home(){
-  
+  const navigate = useNavigate()
+  function handleSignInBtn(){
+    navigate("/explore")
+  }
   return (
     <>
-      <nav className ="nav-bar">
-          <span className="nav-left">
-            <FontAwesomeIcon icon={faBars} />
-          </span>
-        <span className="nav-center">
-          TIME CAPSULE 2.0
-        </span>
-        <span className="nav-right">
-          <p className="home-Text">HOME</p>
-          <p className="capsules-Text">CAPSULES</p>
-          <p className="about-Text">ABOUT</p>
-        </span>
-      </nav>
+      
       <nav className="page-content">
         <p className="tagline">Gather your memories, dreams, and moments of joy, 
           safely tucked away today, to be rediscovered and cherished by the
@@ -31,7 +23,7 @@ function Home(){
             PASSWORD:
           </label>
           <input className="password-input" name="password" id="password" type="password" placeholder="Password" />
-          <button className="signIn-btn">SIGN IN</button>
+          <button onClick={handleSignInBtn} className="signIn-btn">SIGN IN</button>
         </nav>
       </nav>
       <footer class="w-full bg-gray-800 text-white py-4">
