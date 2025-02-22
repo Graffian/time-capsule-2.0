@@ -1,8 +1,5 @@
-Here's a draft for your `README.md` file:
 
----
-
-# 📦 Digital Time Capsule
+# 📦 Time Capsule 2.0
 
 A heartwarming way to preserve your memories, dreams, and moments for the future. The **Digital Time Capsule** lets you securely store messages, photos, videos, and more, to be unlocked and rediscovered at a future date. It's like sending a gift to your future self—or to someone you love.
 
@@ -22,11 +19,10 @@ A heartwarming way to preserve your memories, dreams, and moments for the future
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, TailwindCSS  
+- **Frontend:** React  
 - **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
-- **Authentication:** JWT  
-- **Email Service:** SendGrid (or similar)  
+- **Database:** PostgreSQL  
+- **Authentication:** JWT    
 
 ---
 
