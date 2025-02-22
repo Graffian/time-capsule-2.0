@@ -13,6 +13,9 @@
 }
 body{
   font-family: Poppins, Montserrat;
+  background-image: url(images\photo-1501139083538-0139583c060f.jpeg);
+  background-position: center;
+  background-size: cover;
 }
 .nav-bar{
   color:white;
@@ -23,7 +26,7 @@ body{
   align-items: center;
   flex-direction: row;
   gap:80px;
-  background-image: linear-gradient(to right, #072431, #00B2FF);
+  background-image: linear-gradient(to right, #00a35f, #00B2FF);
   height:100px;
   width:100%;
 }
@@ -44,7 +47,6 @@ body{
 }
 .home-Text{
   position: relative;
-  
 }
  .home-Text:hover::after{
    width: 100%;
@@ -93,19 +95,36 @@ body{
   width: 0%;
   transition: 0.4s width ease;
 }
+.page-content{
+  display: flex;
+  flex-direction: row;
+}
+.tagline{
+  color: aliceblue;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 15vh;
+  margin-inline: 25px;
+  font-size: 2.5em;
+  width: 40vw;
+  background: #6666668c;
+  backdrop-filter: blur(6px);
+  /* backdrop-filter: sepia(90%); */
+}
 .login-nav{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 20px;
   padding-inline: 50px;
   box-shadow: 5px 5px 10px #232323;
-  background-image: linear-gradient(to bottom right,#072431, #00B2FF );
+  background-image: linear-gradient(to bottom right,#00a35f, #00B2FF );
   height:400px;
   width:700px;
   margin-top: 15vh;
   margin-inline:auto;
+  backdrop-filter: blur(6px);
   gap:20px
 }
 .email-label{
