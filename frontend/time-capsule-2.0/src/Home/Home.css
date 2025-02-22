@@ -1,0 +1,122 @@
+.nav-bar{
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:80px;
+  background-color: #1a27ea;
+  height:100px;
+  width:100%;
+}
+.nav-right{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:20px;
+}
+.nav-left{
+  font-size: 1.4em;
+}
+.home-Text{
+  position: relative;
+  
+}
+ .home-Text:hover::after{
+   width: 100%;
+ }
+ .home-Text::after {
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  width: 0%;
+  transition: 0.4s width ease;
+}
+.capsules-Text{
+  position: relative;
+  
+}
+ .capsules-Text:hover::after{
+   width: 100%;
+ }
+ .capsules-Text::after {
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  width: 0%;
+  transition: 0.4s width ease;
+}
+.about-Text{
+  position: relative;
+  
+}
+ .about-Text:hover::after{
+   width: 100%;
+ }
+ .about-Text::after {
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  width: 0%;
+  transition: 0.4s width ease;
+}
+.login-nav{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px #232323;
+  background-color: #1a27ea;
+  height:400px;
+  width:700px;
+  margin:auto;
+  gap:10px
+}
+.email-input{
+  border-radius:10px;
+  padding: 10px;
+  outline: none;
+  border:none;
+  background-color: white;
+  color:black;
+  box-shadow: 5px 5px 10px #232323;
+}
+.email-input:hover{
+  border:2px solid red;
+}
+.password-input{
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  border:none;
+  background-color: white;
+  color:black;
+  box-shadow: 5px 5px 10px #232323;
+}
+.password-input:hover{
+  border:2px solid red;
+}
+.email-label{
+  color:white;
+}
+.password-label{
+  color:white;
+}
+.signIn-btn{
+  padding: 10px;
+  border-radius: 10px;
+  color:white;
+  background-color: #1a27ea;
+  box-shadow: 5px 5px 10px #232323;
+}
