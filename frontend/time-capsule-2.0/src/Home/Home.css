@@ -1,10 +1,10 @@
 @font-face {
   font-family: Poppins;
-  src: url(Fonts\Poppins-Regular.ttf);
+  src: url(..\..\public\Fonts\Poppins-Regular.ttf);
 }
 @font-face {
   font-family: Montserrat;
-  src: url(Fonts\Montserrat-Medium.ttf);
+  src: url(..\..\public\Fonts\Montserrat-Medium.ttf);
 }
 *{
   margin: 0;
@@ -13,7 +13,7 @@
 }
 body{
   font-family: Poppins, Montserrat;
-  background-image: url(images\photo-1501139083538-0139583c060f.jpeg);
+  background-image: url('../../public/images/photo-1501139083538-0139583c060f.jpeg');
   background-position: center;
   background-size: cover;
 }
