@@ -11,9 +11,9 @@ function Home(){
     <>
       
       <nav className="page-content">
-        <p className="tagline">Gather your memories, dreams, and moments of joy, 
+        {/*<p className="tagline">Gather your memories, dreams, and moments of joy, 
           safely tucked away today, to be rediscovered and cherished by the
-          hearts of tomorrow ❤️</p>
+          hearts of tomorrow ❤️</p>*/}
         <nav className="login-nav">
           <label className="email-label" for="email">
             EMAIL:
