@@ -34,6 +34,9 @@ function Home(){
           <button className="signIn-btn">SIGN IN</button>
         </nav>
       </nav>
+      <footer class="w-full bg-gray-800 text-white py-4">
+        <p class="text-sm">&copy; 2025 <span style={{fontFamily:"monospace", fontSize:"1.5em"}}> Graffian. </span> All rights reserved.</p>
+      </footer>
     </>
     )
 }
