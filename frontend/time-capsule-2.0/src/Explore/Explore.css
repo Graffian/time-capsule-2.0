@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap:20px;
+  gap:10px;
 }
 .input-div-1{
   display: flex;
@@ -15,7 +15,7 @@
   background-color: black;
   box-shadow: 5px 5px 10px #232323;
   height:450px;
-  width:500px;
+  width:520px;
 }
 .input-div-2{
   display: flex;
@@ -26,8 +26,8 @@
   background-color: black;
   box-shadow: 5px 5px 10px #232323;
   height:450px;
-  width:450px;
-  gap:20px;
+  width:520px;
+  gap:40px;
 }
 .add-img-tab{
   display: flex;
@@ -64,4 +64,44 @@ label{
   color:black;
   padding: 10px;
   box-shadow: 5px 5px 10px #232323;
+}
+.created-capsule-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top:20px;
+}
+.capsule{
+  background-color: black;
+  box-shadow:5px 5px 10px #232323;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:20px;
+  height:200px;
+}
+.span-left{
+  color:white;
+}
+.span-center{
+  color:white;
+}
+.span-right{
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:10px;
+}
+.date-input{
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:5px;
 }
