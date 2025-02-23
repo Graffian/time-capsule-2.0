@@ -46,7 +46,7 @@ body{
   flex-direction: row;
   gap:20px;
 }
-.nav-left{
+.menu-icon{
   display: none;
   font-size: 1.4em;
 }
@@ -215,8 +215,26 @@ footer{
   background-color: #00abb3 ;
 }
 @media (max-width:750px) {
-  .nav-left{
-    
+  .menu-icon{
+    display: flex;
+    align-self: center;
+  }
+  .nav-right{
+    display: none;
+  }
+  .sidebar{
+    display: none;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 0px 0px 0px 25px;
+    width: 60vw;
+    height: 50vh;
+    background: #9696965e;
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10000;
   }
 }
 @media (max-width:1230px) {
