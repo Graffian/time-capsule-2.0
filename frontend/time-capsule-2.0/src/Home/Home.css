@@ -47,6 +47,7 @@ body{
   gap:20px;
 }
 .nav-left{
+  display: none;
   font-size: 1.4em;
 }
 .home-Text{
@@ -196,6 +197,9 @@ body{
   cursor: pointer;
   background-color: #024646;
 }
+.sidebar{
+  display: none;
+}
 footer{
   display: flex;
   flex-direction: row;
@@ -210,10 +214,9 @@ footer{
   padding: 10px;
   background-color: #00abb3 ;
 }
-@media (max-width:700px) {
+@media (max-width:750px) {
   .nav-left{
-    position: absolute;
-    right: -10000;
+    
   }
 }
 @media (max-width:1230px) {
