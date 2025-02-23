@@ -1,11 +1,34 @@
 import "./Home.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import {useNavigate} from "react-router-dom"
+import {useNavigate , Link} from "react-router-dom"
+import {useRef,useState} from "react"
 function Home(){
+  const [message , setMessage] = useState("")
   const navigate = useNavigate()
-  function handleSignInBtn(){
-    navigate("/explore")
+  const emailInputRef = useRef()
+  const passwordInputRef = useRef()
+  async function handleLogInBtn(){
+    
+    const userInfo = {
+      email : emailInputRef.current.value,
+      password: passwordInputRef.current.value
+    }
+    const data = await fetch("http://localhost:5000/api/users/check",{
+      credentials:"include",
+      method:"POST",
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body:JSON.stringify(userInfo)
+    })
+    const response = await data.json()
+    console.log(response)
+    if( response.email === userInfo.email && response.password === userInfo.password){
+      navigate("/explore")
+    }else{
+      setMessage("CREDENTIALS DONT MATCH PLS SIGN-IN FIRST")
+    }
   }
   return (
     <>
@@ -18,12 +41,15 @@ function Home(){
           <label className="email-label" for="email">
             EMAIL:
           </label>
-          <input className="email-input" name="email" id="email" type="email" placeholder="someone@example.com" />
+          <input ref={emailInputRef} className="email-input" name="email" id="email" type="email" placeholder="someone@example.com" />
           <label className="password-label" for="password">
             PASSWORD:
           </label>
-          <input className="password-input" name="password" id="password" type="password" placeholder="Password" />
-          <button onClick={handleSignInBtn} className="signIn-btn">SIGN IN</button>
+          <input ref={passwordInputRef} className="password-input" name="password" id="password" type="password" placeholder="Password" />
+          <button onClick={handleLogInBtn} className="signIn-btn">LOG IN</button>
+          <p style={{"color":"red"}}>{message}</p>
+          <Link to="/auth">having problems? Sign in here first</Link>
+          
         </nav>
       </nav>
       <footer class="w-full bg-gray-800 text-white py-4">

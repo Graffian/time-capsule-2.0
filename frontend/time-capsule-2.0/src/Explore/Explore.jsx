@@ -10,21 +10,21 @@ function Explore(){
       <nav className="create-nav">
         <div className="input-div-1">
           <label for="capsule-name">CAPSULE NAME:</label>
-          <input className="capsule-name-input" type="text" placeholder="name your capsule...."/>
+          <input className="capsule-name-input input-shit" type="text" placeholder="name your capsule...."/>
           <label for="capsule-name">DESCRIPTION:</label>
-          <input className="capsule-desc-input" type="text" placeholder="Brief description....."/>
+          <input className="capsule-desc-input input-shit" type="text" placeholder="Brief description....."/>
         </div>
         <div className="input-div-2">
-          <input className="capsule-type-input" type="text" placeholder="SELECT TYPE....."/>
+          <input className="capsule-type-input input-shit" type="text" placeholder="SELECT TYPE....."/>
           
-          <span className="date-input">
-            <span className="open-date-input">
+          <span className="date-input input-shit">
+            <span className="open-date-input input-shit">
               OPENING DATE:
-              <input className="capsule-type-input" type="date" placeholder="SELECT TYPE....."/>
+              <input className="capsule-type-input input-shit" type="date" placeholder="SELECT TYPE....."/>
             </span>
-            <span className="close-time-input">
+            <span className="close-time-input input-shit">
               CLOSING TIME:
-              <input className="capsule-type-input" type="time" placeholder="SELECT TYPE....."/>
+              <input className="capsule-type-input input-shit" type="time" placeholder="SELECT TYPE....."/>
             </span>
           </span>
           <span className="add-img-tab">
