@@ -155,7 +155,7 @@ label{
   align-items: center;
   gap: 20px;
 }
-footer{
+.explore-footer{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

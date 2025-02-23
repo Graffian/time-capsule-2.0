@@ -121,7 +121,7 @@ function Explore(){
           </span>
         </div>
       </nav>
-      <footer class="w-full bg-gray-800 text-white py-4">
+      <footer class="explore-footer">
         <p class="text-sm">&copy; 2025 <span style={{fontFamily:"monospace", fontSize:"1.5em"}}> Team Graffian. </span> All rights reserved.</p>
       </footer>
     </>

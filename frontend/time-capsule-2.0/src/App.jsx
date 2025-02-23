@@ -1,4 +1,4 @@
-import "./App.css"
+import "./Home/Home.css"
 import Home from  "./Home/Home"
 import Explore from  "./Explore/Explore"
 import Auth from  "./Auth/Auth"
@@ -14,13 +14,13 @@ function App() {
     <>
       <nav className ="nav-bar">
 
-        <span className="nav-center">
+        <span className="nav-center" id="logo">
           TIME CAPSULE 2.0
         </span>
         {/* <span className="nav-left">
            <FontAwesomeIcon icon={faBars} />
         </span> */}
-        <span className="nav-right">
+        <span className="nav-right" id="disappear">
           <p onClick={()=>{navigate("/")}} className="home-Text">HOME</p>
           <p className="capsules-Text">CAPSULES</p>
           <p className="about-Text">ABOUT</p>
