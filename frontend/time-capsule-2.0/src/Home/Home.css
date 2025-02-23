@@ -201,7 +201,7 @@ footer{
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 0px;
+  margin-top: 65px;
   width: 100%;
   height: 80px;
   color: aliceblue;
@@ -209,6 +209,12 @@ footer{
   bottom: 0;
   padding: 10px;
   background-color: #00abb3 ;
+}
+@media (max-width:700px) {
+  .nav-left{
+    position: absolute;
+    right: -10000;
+  }
 }
 @media (max-width:1230px) {
   .page-content{
@@ -238,7 +244,7 @@ footer{
     background-image: linear-gradient(to bottom right,#00a35f, #00B2FF );
     height:400px;
     max-width:50vw;
-    margin-top: 20px;
+    margin-top: 15vh;
     backdrop-filter: blur(6px);
     gap:20px;
   }
