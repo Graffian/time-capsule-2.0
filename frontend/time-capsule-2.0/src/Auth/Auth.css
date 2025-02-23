@@ -1,0 +1,238 @@
+@font-face {
+  font-family: Poppins;
+  src: url(..\..\public\Fonts\Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(..\..\public\Fonts\Montserrat-Medium.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Poppins, Montserrat;
+  background-image: url('../../public/images/photo-1501139083538-0139583c060f.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nav-bar{
+  color:white;
+  display: flex;
+  font-weight: 500;
+  line-height: 3em;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap:80px;
+  background-image: linear-gradient(to right, #00a35f, #00B2FF);
+  height:60px;
+  width:100%;
+}
+.nav-center{
+  font-size: 2em;
+  font-weight: 600;
+  font-family: Montserrat;
+}
+.nav-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:20px;
+}
+.nav-left{
+  font-size: 1.4em;
+}
+.home-Text{
+  position: relative;
+}
+ .home-Text:hover::after{
+   cursor: pointer;
+   width: 100%;
+ }
+ .home-Text::after {
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  width: 0%;
+  transition: 0.4s width ease;
+}
+.capsules-Text{
+  position: relative;
+  
+}
+ .capsules-Text:hover::after{
+   cursor: pointer;
+   width: 100%;
+ }
+ .capsules-Text::after {
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  width: 0%;
+  transition: 0.4s width ease;
+}
+.about-Text{
+  position: relative;
+  
+}
+ .about-Text:hover::after{
+   cursor: pointer;
+   width: 100%;
+ }
+ .about-Text::after {
+  content:"";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  width: 0%;
+  transition: 0.4s width ease;
+}
+.page-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.tagline{
+  color: aliceblue;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 15vh;
+  font-size: 2.5em;
+  width: 40vw;
+  background: #6666668c;
+  backdrop-filter: blur(6px);
+}
+.login-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding-inline: 50px;
+  box-shadow: 5px 5px 10px #232323;
+  background-image: linear-gradient(to bottom right,#00a35f, #00B2FF );
+  height:400px;
+  width:700px;
+  margin-top: 15vh;
+  backdrop-filter: blur(6px);
+  gap:20px;
+}
+.email-label{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  font-size: 1.5em;
+  color:white;
+}
+.password-label{
+  font-size: 1.5em;
+  color:white;
+}
+.email-input{
+  border-radius:10px;
+  padding: 10px;
+  outline: none;
+  min-width: 250px;
+  border:none;
+  background-color: white;
+  color:black;
+  font: inherit;
+  font-size: 0.75em;
+  box-shadow: 5px 5px 10px #232323;
+}
+.email-input:hover{
+  cursor: pointer;
+  border:2px solid red;
+  padding: 8px;
+}
+.password-input{
+  border-radius:10px;
+  padding: 10px;
+  min-width: 250px;
+  outline: none;
+  border:none;
+  background-color: white;
+  color:black;
+  font: inherit;
+  font-size: 0.75em;
+  box-shadow: 5px 5px 10px #232323;
+}
+.password-input:hover{
+  cursor: pointer;
+  border:2px solid red;
+  padding: 8px;
+}
+
+.signIn-btn{
+  margin-top: 40px;
+  font: inherit;
+  padding-block: 10px;
+  padding-inline: 20px;
+  border-radius: 5px;
+  color:white;
+  border: 0;
+  background-color: #023047;
+  /* box-shadow: 5px 5px 10px #232323; */
+}
+.signIn-btn:hover{
+  cursor: pointer;
+  background-color: #024646;
+}
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  color: aliceblue;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  background-color: #00abb3 ;
+}
+@media (max-width:1230px) {
+  .page-content{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .tagline{
+    color: aliceblue;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 15vh;
+    width: 85vw;
+    font-size: 2em;
+    background: #6666668c;
+    backdrop-filter: blur(6px);
+  }
+  .login-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding-inline: 50px;
+    box-shadow: 5px 5px 10px #232323;
+    background-image: linear-gradient(to bottom right,#00a35f, #00B2FF );
+    height:400px;
+    max-width:50vw;
+    margin-top: 20px;
+    backdrop-filter: blur(6px);
+    gap:20px;
+  }
+}

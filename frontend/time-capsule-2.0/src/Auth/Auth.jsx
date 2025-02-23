@@ -1,20 +1,19 @@
-import "./Home.css"
+import "./Auth.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import {useNavigate , Link} from "react-router-dom"
-import {useRef,useState} from "react"
-function Home(){
-  const [message , setMessage] = useState("")
+import {useRef} from "react"
+function Auth(){
   const navigate = useNavigate()
   const emailInputRef = useRef()
   const passwordInputRef = useRef()
-  async function handleLogInBtn(){
-    
+  async function handleSignInBtn(){
+    navigate("/explore")
     const userInfo = {
       email : emailInputRef.current.value,
       password: passwordInputRef.current.value
     }
-    const data = await fetch("http://localhost:5000/api/users/check",{
+    const data = await fetch("http://localhost:5000/api/users",{
       credentials:"include",
       method:"POST",
       headers:{
@@ -24,14 +23,11 @@ function Home(){
     })
     const response = await data.json()
     console.log(response)
-    if( response.email === userInfo.email && response.password === userInfo.password){
-      navigate("/explore")
-    }else{
-      setMessage("CREDENTIALS DONT MATCH PLS SIGN-IN FIRST")
-    }
+    
   }
-  return (
-    <>
+  
+  return( 
+  <>
       
       <nav className="page-content">
         {/*<p className="tagline">Gather your memories, dreams, and moments of joy, 
@@ -46,16 +42,15 @@ function Home(){
             PASSWORD:
           </label>
           <input ref={passwordInputRef} className="password-input" name="password" id="password" type="password" placeholder="Password" />
-          <button onClick={handleLogInBtn} className="signIn-btn">LOG IN</button>
-          <p style={{"color":"red"}}>{message}</p>
-          <Link to="/auth">having problems? Sign in here first</Link>
-          
+          <button onClick={handleSignInBtn} className="signIn-btn">SIGN IN</button>
+          <Link to="/">having problems? Log in here first</Link>
         </nav>
       </nav>
       <footer class="w-full bg-gray-800 text-white py-4">
         <p class="text-sm">&copy; 2025 <span style={{fontFamily:"monospace", fontSize:"1.5em"}}> Graffian. </span> All rights reserved.</p>
       </footer>
     </>
+    
     )
 }
-export default Home
+export default Auth
