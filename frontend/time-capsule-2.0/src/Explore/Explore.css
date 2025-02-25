@@ -16,12 +16,13 @@
   border:5px solid #00abb3;
   border-radius: 20px;
   background-color: #232323;
-  backdrop-filter: blur(6px);
+  
   box-shadow: 5px 5px 10px #232323;
   height:450px;
   width: 520px;
 }
 .input-div-2{
+  position: relative;
   display: flex;
   padding-inline: 20px;
   justify-content: space-evenly;
@@ -31,7 +32,7 @@
   border:5px solid #00abb3;
   border-radius: 20px;
   background-color: #232323;
-  backdrop-filter: blur(6px);
+  
   box-shadow: 5px 5px 10px #232323;
   height:450px;
   width: 520px;
@@ -52,11 +53,12 @@
   width: 250px;
   max-width: 250px;
   border-radius: 10px;
-  font: inherit;
-  font-size: 0.75em;
+  
+  
   background-color: white;
   color:black;
 }
+
 .capsule-desc-input{
   padding:10px;
   border: none;
@@ -179,4 +181,28 @@ footer{
     width: auto;
     max-width: 250px;
   }
+}
+.type-div{
+  position:absolute;
+  top:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #232323;
+  box-shadow:5px 5px 10px black;
+  height:0;
+  width:300px;
+  color:white;
+  gap:15px;
+  list-style-type: none;
+  visibility: hidden;
+  transition:0.6s visibility ease , 0.6s height ease;
+}
+.capsule-type-input:hover ~ .type-div{
+  visibility: visible;
+  height: 100px;
+}
+li:hover{
+  color:red;
 }
