@@ -18,7 +18,7 @@ function Explore(){
             <label for="capsule-name">CAPSULE NAME:</label>
             <input className="capsule-name-input input-shit" type="text" placeholder="name your capsule...."/>
             <label for="capsule-name">DESCRIPTION:</label>
-            <input className="capsule-desc-input input-shit" type="text" placeholder="Brief description....."/>
+            <textarea className="capsule-desc-input input-shit" type="text">Add Description...</textarea>
           </div>
           <div className="input-div-2">
             <input ref={typeInputRef}  className="capsule-type-input input-shit" type="text" placeholder="SELECT TYPE....."/>
@@ -40,11 +40,11 @@ function Explore(){
               </span>
             </span>
             <span className="add-img-tab">
-              <label for="fileUpload">
+              <label for="fileUpload" style={{cursor:"pointer"}}>
                 <FontAwesomeIcon className="plusIcon" icon={faPlus} />
               </label>
               <input name="capsule-pics" type="file" id="fileUpload" style={{"display":"none"}}/>
-              <p>ADD IMAGES</p>
+              <p>ADD FILES</p>
             </span>
             <button type="submit" className="addBtn" onClick={handleAddBtn}>ADD CAPSULE</button>
           </div>
