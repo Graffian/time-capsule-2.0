@@ -274,8 +274,10 @@ footer{
     display: none;
     flex-direction: column;
     padding: 40px;
+    font-size: 2em;
+    line-height: 2em;
     border-radius: 0px 0px 0px 25px;
-    width: 80vw;
+    width: 65vw;
     height: 50vh;
     background: #9696965e;
     backdrop-filter: blur(6px);
@@ -300,7 +302,7 @@ footer{
     gap:20px;
   }
 }
-@media screen and (max-width:400px) {
+@media (max-width:400px) {
   #logo{
     font-size: 1em;
   }
