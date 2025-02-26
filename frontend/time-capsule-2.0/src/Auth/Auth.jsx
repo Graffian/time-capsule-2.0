@@ -23,7 +23,6 @@ function Auth(){
     })
     const response = await data.json()
     console.log(response)
-    
   }
   
   return( 

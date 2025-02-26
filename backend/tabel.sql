@@ -1,0 +1,7 @@
+CREATE TABLE users(
+ id BIGSERIAL NOT NULL,
+ email VARCHAR(100) NOT NULL,
+ password VARCHAR(100) NOT NULL,
+ date VARCHAR(100),
+ signedToken VARCHAR(700)
+);

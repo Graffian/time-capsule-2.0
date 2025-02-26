@@ -1,13 +1,19 @@
 import "./Explore.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import {useNavigate} from "react-router-dom"
+import {useState,useRef} from "react"
 function Explore(){
+  const typeInputRef = useRef()
+  
+  
   function handleAddBtn(){
     
   }
   return(
     <>
       <nav className="create-nav">
+        <form action="http://localhost:5000/uploads" method="post" encType="multipart/form-data">
         <div className="input-div-1">
           <label for="capsule-name">CAPSULE NAME:</label>
           <input className="capsule-name-input input-shit" type="text" placeholder="name your capsule...."/>
@@ -15,8 +21,14 @@ function Explore(){
           <input className="capsule-desc-input input-shit" type="text" placeholder="Brief description....."/>
         </div>
         <div className="input-div-2">
-          <input className="capsule-type-input input-shit" type="text" placeholder="SELECT TYPE....."/>
+          <input ref={typeInputRef}  className="capsule-type-input input-shit" type="text" placeholder="SELECT TYPE....."/>
+          <div className="type-div">
+            
+            <li  onClick={()=>typeInputRef.current.value="IMAGE"} className="type-1">IMAGE</li>
+            <li  onClick={()=>typeInputRef.current.value="TEXT"} className="type-2">TEXT</li>
+            <li  onClick={()=>typeInputRef.current.value="VIDEOS"} className="type-3">VIDEOS</li>
           
+          </div>
           <span className="date-input input-shit">
             <span className="open-date-input input-shit">
               OPENING DATE:
@@ -28,11 +40,16 @@ function Explore(){
             </span>
           </span>
           <span className="add-img-tab">
+              <label for="fileUpload">
            <FontAwesomeIcon className="plusIcon" icon={faPlus} />
+              </label>
+            
+              <input name="capsule-pics" type="file" id="fileUpload" style={{"display":"none"}}/>
            <p>ADD IMAGES</p>
           </span>
-            <button className="addBtn" onClick={handleAddBtn}>ADD CAPSULE</button>
+            <button type="submit" className="addBtn" onClick={handleAddBtn}>ADD CAPSULE</button>
         </div>
+            </form>
       </nav>
 
       {/*------------CREATED CAPSULES SECTION------------------*/}

@@ -5,7 +5,8 @@ const app = express()
 const {Client} = require("pg")
 const jwt = require("jsonwebtoken")
 const cors = require("cors")
-const {cryptoRandomStringAsync} = require("crypto-random-string")
+const multer = require("multer")
+
 const users = require("./users.json")
 require("dotenv").config({path:"../.env"})
 app.use(cors({
@@ -60,6 +61,22 @@ app.post("/api/users/check"  , async (req,res)=>{
     const decoded = jwt.verify(users[number].signedToken , process.env.JWT_SECRET_KEY)
     res.send(decoded)
   }
+})
+const storage = multer.diskStorage({
+    destination:function(req,file,cb){
+      return cb(null,"./capsule-uploads")
+    },
+    filename:function(req,file,cb){
+      const name = `${file.fieldname} - ${Date.now()}`
+      return cb(null,name)
+    }
+  })
+  const upload = multer({ storage })
+app.post("/uploads" , upload.single("capsule-pics") , (req,res)=>{
+  console.log(req.file)
+  console.log(req.body)
+  
+  res.redirect("http://localhost:5173/explore")
 })
 app.listen(process.env.PORT ,  ()=>{
   console.log("server runnin")
