@@ -1,7 +1,9 @@
-CREATE TABLE users(
+CREATE TABLE capsules(
  id BIGSERIAL NOT NULL,
- email VARCHAR(100) NOT NULL,
- password VARCHAR(100) NOT NULL,
- date VARCHAR(100),
- signedToken VARCHAR(700)
+ capsuleName VARCHAR(100) NOT NULL,
+ capsuleDesc VARCHAR(500) NOT NULL,
+ creatorName VARCHAR(100),
+ capsuleType VARCHAR(100) NOT NULL,
+ date VARCHAR(100) NOT NULL,
+ time VARCHAR(100) NOT NULL
 );

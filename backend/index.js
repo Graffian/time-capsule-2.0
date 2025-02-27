@@ -6,6 +6,7 @@ const {Client} = require("pg")
 const jwt = require("jsonwebtoken")
 const cors = require("cors")
 const multer = require("multer")
+const capsules = require("./capsules.json")
 
 const users = require("./users.json")
 require("dotenv").config({path:"../.env"})
@@ -77,6 +78,31 @@ app.post("/uploads" , upload.single("capsule-pics") , (req,res)=>{
   console.log(req.body)
   
   res.redirect("http://localhost:5173/explore")
+})
+async function databaseMiddleware(req,res,next){
+  const body = req.body
+  await client.query(`INSERT INTO capsules(
+    capsuleName,
+    capsuleDesc,
+    creatorName,
+    capsuleType,
+    date,
+    time
+    ) VALUES($1,$2,$3,$4,$5,$6);` , [body.capsuleName] , [body.capsuleDesc] , [body.creatorName] , [body.capsuleType] , [body.date] , [body.time])
+    console.log(body)
+  next()
+}
+app.post("/capsules" , databaseMiddleware, (req,res)=>{
+  const body = req.body
+  capsules.push(body)
+  fs.writeFile("./capsules.json" , JSON.stringify(capsules) , (err)=>{
+    if(!err){
+      console.log("no err")
+    }else{
+      console.log(err)
+    }
+  })
+ res.send(capsules[capsules.length-1])
 })
 app.listen(process.env.PORT ,  ()=>{
   console.log("server runnin")
