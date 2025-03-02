@@ -2,6 +2,7 @@ import "./Home/Home.css"
 import Home from  "./Home/Home"
 import Explore from  "./Explore/Explore"
 import Auth from  "./Auth/Auth"
+import Capsule from  "./Capsules/Capsule"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import {Routes,Route} from "react-router-dom"
@@ -38,6 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/explore" element={<Explore/>}/>
+        <Route path="/capsule/:id" element={<Capsule/>}/>
         <Route path="/auth" element={<Auth/>}/>
       </Routes>
        

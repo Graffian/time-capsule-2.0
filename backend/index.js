@@ -8,9 +8,6 @@ const cors = require("cors")
 const capsules = require("./capsules")
 const users = require("./users.json")
 
-
-
-
 require("dotenv").config({path:"../.env"})
 console.log(fs.readFile("./capsules.json" , "utf-8",  (err)=>{if(err){console.log(err)}}))
 app.use(cors({

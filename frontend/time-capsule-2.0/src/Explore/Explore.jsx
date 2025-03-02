@@ -1,7 +1,7 @@
 import "./Explore.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import {useNavigate} from "react-router-dom"
+import {useNavigate,Link} from "react-router-dom"
 import {useState,useRef,useEffect} from "react"
 function Explore(){
   const [capsules,setCapsules] = useState([])
@@ -24,6 +24,10 @@ function Explore(){
      };
      getTextCapsules()
   },[])
+  
+  
+  
+  
   async function handleAddBtn(){
     
     console.log(capsules)
@@ -53,6 +57,11 @@ function Explore(){
     timeInputRef.current.value=""
     setInputType("")
     }
+    for(let i=1;i<=capsules.length;i++){
+      
+      const LinkElement = document.querySelector(`#root > nav.created-capsule-nav > a:nth-child(${i})`)
+      LinkElement.setAttribute("href" , `explore/capsule/${i}`)
+    }
     navigate("/explore")
   }
   function textField(){
@@ -61,6 +70,7 @@ function Explore(){
     }else{
       return (<p></p>)
     }
+    
   }
   return(
     <>
@@ -121,6 +131,7 @@ function Explore(){
       <nav className="created-capsule-nav">
         
           {capsules.map(capsule=>(
+            <a style={{ textDecoration:"none"}}>
           <div className="capsule">
           <span style={{"fontSize":"1.4em"}} className="span-left">
             {capsule.capsulename}
@@ -132,10 +143,11 @@ function Explore(){
             <p className="creatorText">CREATOR:{capsule.creatorname}</p>
             <p  className="createdOnText">CREATED ON:{capsule.date}</p>
             {capsule.time == "" ? (<p className="opensInText">OPEN ALL TIME</p>):
-                                  (<p className="opensInText">OPENS IN: {capsule.time}</p>)
+                       (<p className="opensInText">OPENS IN: {capsule.time}</p>)
             }
           </span>
         </div>
+          </a>
           ))}
       </nav>
       <footer className="explore-footer">
