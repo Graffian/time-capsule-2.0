@@ -108,7 +108,7 @@ function Explore(){
            
             <span className="add-img-tab">
               <label for="fileUpload" style={{cursor:"pointer"}}>
-                <FontAwesomeIcon className="plusIcon" icon={faPlus} />
+                <FontAwesomeIcon className="plusIcon" style={{marginInline: "1em"}} icon={faPlus} />
                 ADD FILES
               </label>
               <input name="capsule-pics" type="file" id="fileUpload" style={{"display":"none"}}/>

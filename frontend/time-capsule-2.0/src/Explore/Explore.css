@@ -14,12 +14,12 @@
   gap:10px;
   border:5px solid #00abb3;
   gap:5px;
-  border:3px dashed #00abb3;
+  border:3px solid #00abb3;
   border-radius: 20px;
   background-color: #232323;
   margin: 15px;
   box-shadow: 5px 5px 10px #232323;
-  height:450px;
+  height:490px;
   width: 520px;
 }
 .input-div-2{
@@ -30,7 +30,7 @@
   align-items: center;
   flex-direction: column;
   gap:5px;
-  border:3px dashed #00abb3;
+  border:3px solid #00abb3;
   border-radius: 20px;
   background-color: #232323;
   margin: 15px;
@@ -72,6 +72,7 @@
   font-size: 0.75em;
   background-color: white;
   color:black;
+  margin-bottom: 25px;
 }
 .capsule-name-input{
   padding:10px;
@@ -92,6 +93,7 @@ label{
 .addBtn{
   background-color: #00a35f;
   border-radius: 10px;
+  cursor: pointer;
   border: none;
   outline: none;
   font: inherit;
