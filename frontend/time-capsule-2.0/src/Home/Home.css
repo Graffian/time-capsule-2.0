@@ -13,9 +13,9 @@
 }
 body{
   font-family: Poppins, Montserrat;
-  background-image: url('../../public/images/photo-1501139083538-0139583c060f.jpeg');
+  background: url('../../public/images/photo-1501139083538-0139583c060f.jpeg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 .nav-bar{
   color:white;
@@ -214,30 +214,15 @@ footer{
   padding: 10px;
   background-color: #00abb3 ;
 }
-@media (max-width:750px) {
-  .menu-icon{
-    display: flex;
-    align-self: center;
+@media screen and (max-width:1230px) {
+  body{
+    background-image: url('../../public/images/photo-1688x1688.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
-  .nav-right{
-    display: none;
+  #logo{
+    font-size: 1.5em;
   }
-  .sidebar{
-    display: none;
-    flex-direction: column;
-    padding: 40px;
-    border-radius: 0px 0px 0px 25px;
-    width: 60vw;
-    height: 50vh;
-    background: #9696965e;
-    backdrop-filter: blur(6px);
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 10000;
-  }
-}
-@media (max-width:1230px) {
   .page-content{
     display: flex;
     flex-flow: column wrap;
@@ -268,5 +253,57 @@ footer{
     margin-top: 15vh;
     backdrop-filter: blur(6px);
     gap:20px;
+  }
+}
+@media (max-width:750px) {
+  body{
+    background-image: url('../../public/images/photo-844x1688.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  #disappear{
+    display: none;
+  }
+
+  .menu-icon{
+    display: flex;
+    align-self: center;
+  }
+  
+  .sidebar{
+    display: none;
+    flex-direction: column;
+    padding: 40px;
+    font-size: 2em;
+    line-height: 2em;
+    border-radius: 0px 0px 0px 25px;
+    width: 65vw;
+    height: 50vh;
+    background: #9696965e;
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+  }
+  .login-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding-inline: 50px;
+    box-shadow: 5px 5px 10px #232323;
+    background-image: linear-gradient(to bottom right,#00a35f, #00B2FF );
+    height:400px;
+    width:85vw;
+    margin-top: 15vh;
+    backdrop-filter: blur(6px);
+    gap:20px;
+  }
+}
+@media (max-width:400px) {
+  #logo{
+    font-size: 1em;
   }
 }

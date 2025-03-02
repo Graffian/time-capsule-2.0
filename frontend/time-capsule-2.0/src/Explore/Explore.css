@@ -4,7 +4,6 @@
   align-items: center;
   flex-flow: row wrap;
   margin-top: 10vh;
-  gap:25px;
 }
 .input-div-1{
   display: flex;
@@ -14,9 +13,11 @@
   flex-direction: column;
   gap:10px;
   border:5px solid #00abb3;
+  gap:5px;
+  border:3px dashed #00abb3;
   border-radius: 20px;
   background-color: #232323;
-  
+  margin: 15px;
   box-shadow: 5px 5px 10px #232323;
   height:450px;
   width: 520px;
@@ -29,12 +30,12 @@
   align-items: center;
   flex-direction: column;
   gap:5px;
-  border:5px solid #00abb3;
+  border:3px dashed #00abb3;
   border-radius: 20px;
   background-color: #232323;
-  
+  margin: 15px;
   box-shadow: 5px 5px 10px #232323;
-  height:450px;
+  height:490px;
   width: 520px;
 }
 .add-img-tab{
@@ -52,9 +53,9 @@
   outline: none;
   width: 250px;
   max-width: 250px;
-  border-radius: 10px;
-  
-  
+  border-radius: 5px;
+  font: inherit;
+  font-size: 0.75em;
   background-color: white;
   color:black;
 }
@@ -65,7 +66,8 @@
   outline: none;
   width: 250px;
   max-width: 250px;
-  border-radius: 10px;
+  height: 150px;
+  border-radius: 5px;
   font: inherit;
   font-size: 0.75em;
   background-color: white;
@@ -77,7 +79,7 @@
   outline: none;
   width: 250px;
   max-width: 250px;
-  border-radius: 10px;
+  border-radius: 5px;
   font: inherit;
   font-size: 0.75em;
   background-color: white;
@@ -157,7 +159,7 @@ label{
   align-items: center;
   gap: 20px;
 }
-footer{
+.explore-footer{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -170,12 +172,12 @@ footer{
   padding: 10px;
   background-color: #00abb3 ;
 }
-@media (max-width:1065px){
+@media (max-width:650px){
   .input-div-1{
-    width: 90vw;
+    width: 80vw;
   }
   .input-div-2{
-    width: 90vw;
+    width: 80vw;
   }
   .input-shit{
     width: auto;
@@ -183,12 +185,20 @@ footer{
   }
 }
 .type-div{
+
   position:absolute;
   top:90px;
+
+  position: absolute;
+  text-align: center;
+  top:80px;
+  font-weight: 500;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   background-color: #232323;
   box-shadow:5px 5px 10px black;
   border-radius: 15px;
@@ -196,14 +206,38 @@ footer{
   width:300px;
   color:white;
   gap:15px;
+
+  background-color: #292929;
+  border: 2px solid #00abb3;
+  /* backdrop-filter: blur(6px); */
+  box-shadow:5px 5px 10px #232323;
+  /* padding: 50px; */
+  height:0;
+  width: 200px;
+  color:#00abb3;
+  line-height:2em;
+
   list-style-type: none;
   visibility: hidden;
   transition:0.6s visibility ease , 0.6s height ease;
 }
-.capsule-type-input:hover ~ .type-div{
+.capsule-type-input:hover ~ .type-div, .type-div:hover{
   visibility: visible;
-  height: 100px;
+  height: 150px;
 }
-li:hover{
-  color:red;
+.type-div li{
+  cursor: pointer;
+  /* display: block; */
+  width: 100%;
+}
+.type-div li:hover{
+  color:#232323;
+  background-image: linear-gradient(to right, #00a35f, #00B2FF);
+  /* display: block; */
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
 }

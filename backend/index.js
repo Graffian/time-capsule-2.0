@@ -5,15 +5,23 @@ const app = express()
 const {Client} = require("pg")
 const jwt = require("jsonwebtoken")
 const cors = require("cors")
-const multer = require("multer")
-const capsules = require("./capsules.json")
-
+const capsules = require("./capsules")
 const users = require("./users.json")
+
+
+
+
 require("dotenv").config({path:"../.env"})
+console.log(fs.readFile("./capsules.json" , "utf-8",  (err)=>{if(err){console.log(err)}}))
 app.use(cors({
   origin:"http://localhost:5173",
   credentials:true
 }))
+
+
+
+    
+    
 const client = new Client({
   user:process.env.PG_USERNAME,
   password:process.env.PG_PASSWORD,
@@ -63,46 +71,35 @@ app.post("/api/users/check"  , async (req,res)=>{
     res.send(decoded)
   }
 })
-const storage = multer.diskStorage({
-    destination:function(req,file,cb){
-      return cb(null,"./capsule-uploads")
-    },
-    filename:function(req,file,cb){
-      const name = `${file.fieldname} - ${Date.now()}`
-      return cb(null,name)
-    }
-  })
-  const upload = multer({ storage })
-app.post("/uploads" , upload.single("capsule-pics") , (req,res)=>{
-  console.log(req.file)
-  console.log(req.body)
+
+app.post("/capsule/text" ,  async (req,res)=>{
+  const body = req.body
+   capsules.push(body)
+   fs.writeFile("./capsules.json" , JSON.stringify(capsules) , (err)=>{
+     if(err){
+       console.log(err)
+     }else{
+       console.log("successfull update")
+       if(capsules.length>0){
+        client.query(`INSERT INTO capsule_typ_text (
+       capsuleName ,
+       capsuleDesc,
+       creatorName,
+       capsuleType,
+       date,
+       time,
+       capsuleInputText
+         ) VALUES($1, $2, $3, $4, $5, $6, $7);`, [capsules[capsules.length-1].capsuleName, capsules[capsules.length-1].capsuleDesc , capsules[capsules.length-1].creatorName , capsules[capsules.length-1].capsuleInputType , capsules[capsules.length-1].date , capsules[capsules.length-1].time , capsules[capsules.length-1].capsuleTextInput])
+     }}
+   })
   
-  res.redirect("http://localhost:5173/explore")
+  res.send(JSON.stringify(capsules))
 })
-async function databaseMiddleware(req,res,next){
-  const body = req.body
-  await client.query(`INSERT INTO capsules(
-    capsuleName,
-    capsuleDesc,
-    creatorName,
-    capsuleType,
-    date,
-    time
-    ) VALUES($1,$2,$3,$4,$5,$6);` , [body.capsuleName] , [body.capsuleDesc] , [body.creatorName] , [body.capsuleType] , [body.date] , [body.time])
-    console.log(body)
-  next()
-}
-app.post("/capsules" , databaseMiddleware, (req,res)=>{
-  const body = req.body
-  capsules.push(body)
-  fs.writeFile("./capsules.json" , JSON.stringify(capsules) , (err)=>{
-    if(!err){
-      console.log("no err")
-    }else{
-      console.log(err)
-    }
-  })
- res.send(capsules[capsules.length-1])
+app.get("/capsule/text"  , async (req,res)=>{
+  console.log("andar ghusa")
+  const resp = await client.query(`SELECT * FROM capsule_typ_text;`)
+  
+  res.send(JSON.stringify(resp.rows))
 })
 app.listen(process.env.PORT ,  ()=>{
   console.log("server runnin")
